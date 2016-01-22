@@ -10,7 +10,7 @@ public class Principal extends AppCompatActivity {
     // List<Imovel> imoveis;
     // ImovelAdapter adapter;
     // ListView listView;
-    final static String ID = "id";
+    final static String IDIMOV = "id";
     final static String IDIMOB = "id_imob";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

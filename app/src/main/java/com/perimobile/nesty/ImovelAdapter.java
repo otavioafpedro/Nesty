@@ -62,7 +62,7 @@ public class ImovelAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     Intent it = new Intent(ctx, ImovelDetalhe.class);
-                    it.putExtra(Principal.ID, imovel.getId());
+                    it.putExtra(Principal.IDIMOV, imovel.getId());
                     ctx.startActivity(it);
 
                 }
