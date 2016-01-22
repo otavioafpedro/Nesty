@@ -10,6 +10,13 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.perimobile.nesty.Entidades.Imobiliaria;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ImobiliariaDetalhe extends AppCompatActivity {
     TextView mTextMessage, tvNome,tvDescricao, tvTelefone, tvEndereco;
@@ -18,9 +25,11 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
     Imobiliaria mImobiliaria;
     long idImob;
     private ImageLoader mLoader;
-
-
+    HttpJson imobiliariaHTTP;
     String URLBase = "http://www.perimobile.com/img";
+
+    public static final String URL_IMOBILIARIA_JSON =
+            "http://www.perimobile.com/ws.php?opt=3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +48,33 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
 
         Intent it = getIntent();
         idImob = it.getLongExtra(Principal.IDIMOB, -1);
+        imobiliariaHTTP = new HttpJson(URL_IMOBILIARIA_JSON, "&id=" + idImob) {
+        @Override
+        Object lerJsonTarget(JSONObject json) throws JSONException {
+                JSONArray imobiliariasJson= json.getJSONArray("imobiliaria");
+                List<Imobiliaria> imobiliarias = new ArrayList<>();
+
+                for (int i = 0; i < imobiliariasJson.length(); i++) {
+                    JSONObject imobiliariaJson = imobiliariasJson.getJSONObject(i);
+                    Imobiliaria imobiliaria = new Imobiliaria(
+                            imobiliariaJson.getLong("id"),
+                            imobiliariaJson.getString("nome"),
+                            imobiliariaJson.getString("logo"),
+                            imobiliariaJson.getString("descricao"),
+                            imobiliariaJson.getString("msgids"),
+                            imobiliariaJson.getInt("telefone"),
+                            imobiliariaJson.getString("endereco"),
+                            imobiliariaJson.getString("fotoimob"));
+                    imobiliarias.add(imobiliaria);
+                }
+                return imobiliarias.size() ==  1 ? imobiliarias.get(0) : null;
+            }
+        };
+
         if (mTask == null) {
             mTask = new ImobiliariaTask();
             mTask.execute();
-            if (ImobiliariaHttp.temConexao(this)){
+            if (HttpJson.temConexao(this)){
                 //startDownload();
             } else {
                 mTextMessage.setText("Sem conexão");
@@ -65,7 +97,7 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
         protected Imobiliaria doInBackground(Void... strings) {
             //Aqui devemos usar para receber os dados do bd
 
-            return ImobiliariaHttp.carregarImobiliariaJson(idImob);
+            return (Imobiliaria) imobiliariaHTTP.loadTargetJson(idImob);
         }
 
         @Override
@@ -86,7 +118,6 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
             } else {
                 mTextMessage.setText("Falha ao carregar Imobiliaria");
             }
-
         }
     }
 }
