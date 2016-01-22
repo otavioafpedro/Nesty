@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImovelDetalhe extends AppCompatActivity {
+public class ImovelDetalhe extends AppCompatActivity implements View.OnClickListener {
 
     NetworkImageView fotoImovel, imgImob;
     TextView tvPreco, tvTipo, tvEndereco, tvObs, tvArea1, tvArea2, tvQuartos, tvBWC, tvGaragem, tvEdificio, tvNapto;
@@ -44,6 +45,7 @@ public class ImovelDetalhe extends AppCompatActivity {
         tvTipo = (TextView) findViewById(R.id.txtTipo);
 
         imgImob = (NetworkImageView) findViewById(R.id.imgImob);
+        imgImob.setOnClickListener(this);
         tvEndereco = (TextView) findViewById(R.id.txtEndereco);
         tvObs = (TextView) findViewById(R.id.txtObs);
         tvArea1= (TextView) findViewById(R.id.txtarea1);
@@ -53,10 +55,11 @@ public class ImovelDetalhe extends AppCompatActivity {
         tvGaragem = (TextView) findViewById(R.id.txtgaragem);
         tvEdificio = (TextView) findViewById(R.id.txtEdificio);
         tvNapto = (TextView) findViewById(R.id.txtNApart);
-
+        Button lgruteis = (Button) findViewById(R.id.lgruteis);
+        lgruteis.setOnClickListener(this);
 
         Intent it = getIntent();
-        idImov = it.getLongExtra(Principal.ID, -1);
+        idImov = it.getLongExtra(Principal.IDIMOV, -1);
 
         imovelHTTP = new HttpJson("http://www.perimobile.com/ws.php?opt=2","&id=" + idImov){
             @Override
@@ -76,7 +79,8 @@ public class ImovelDetalhe extends AppCompatActivity {
 
                             Imovel.Tipo.valueOf(imovelJson.getInt("tipo")),
                             imovelJson.getString("foto_imovel"),
-                            imovelJson.getString("video_imovel"));
+                            imovelJson.getString("video_imovel"),
+                            imovelJson.getString("logo"));
                     imoveis.add(imovel);
 
                 }
@@ -93,6 +97,22 @@ public class ImovelDetalhe extends AppCompatActivity {
             }
         } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
             //showProgress(true);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.imgImob:
+                Intent it = new Intent(this, ImobiliariaDetalhe.class);
+                it.putExtra(Principal.IDIMOB, mImovel.getImob().getId());
+                startActivity(it);
+                break;
+            case R.id.lgruteis:
+                Intent iti = new Intent(this, LugaresUteis.class);
+                iti.putExtra(Principal.IDIMOV, mImovel.getId());
+                startActivity(iti);
+                break;
         }
     }
 
@@ -122,6 +142,10 @@ public class ImovelDetalhe extends AppCompatActivity {
                 tvPreco.setText(String.valueOf(mImovel.getPreco()));
                 fotoImovel.setImageUrl(URLBase + imovel.getImgPrincipal(), mLoader);
                 imgImob.setImageUrl(URLBase + imovel.getImob().getLogo(), mLoader);
+                tvTipo.setText(mImovel.getTipo());
+                tvObs.setText(mImovel.getObservacao());
+                tvArea1.setText(String.valueOf(mImovel.getArea1()));
+                tvArea2.setText(String.valueOf(mImovel.getArea2()));
             } else {
                 mTextMessage.setText("Falha ao carregar Imovel");
             }
