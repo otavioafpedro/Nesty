@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="4dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/item_imovel">
+
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="152dp"
+        android:layout_height="94dp"
+        android:id="@+id/imgImovel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/txtPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imgImob"
+        android:layout_toRightOf="@+id/imgImovel"
+        android:text="@null"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/txtTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtPreco"
+        android:layout_below="@+id/txtPreco"
+        android:text="@null"/>
+
+    <TextView
+        android:id="@+id/txtEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtTipo"
+        android:layout_below="@+id/txtTipo"
+        android:text="@null"/>
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/imgImob"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+</RelativeLayout>

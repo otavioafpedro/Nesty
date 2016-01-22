@@ -1,0 +1,130 @@
+package com.perimobile.nesty;
+
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.perimobile.nesty.Entidades.Imovel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ImovelDetalhe extends AppCompatActivity {
+
+    NetworkImageView fotoImovel, imgImob;
+    TextView tvPreco, tvTipo, tvEndereco, tvObs, tvArea1, tvArea2, tvQuartos, tvBWC, tvGaragem, tvEdificio, tvNapto;
+    private TextView mTextMessage;
+
+    private long idImov;
+    Imovel mImovel;
+    private ImovelTask mTask;
+    private ImageLoader mLoader;
+
+    String URLBase = "http://www.perimobile.com/img";
+
+    HttpJson imovelHTTP;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_imovel_detalhe);
+        mLoader = PatternVolley.getInstance(this).getImageLoader();
+
+        fotoImovel = (NetworkImageView) findViewById(R.id.fotoImovel);
+        tvPreco = (TextView) findViewById(R.id.txtPreco);
+        tvTipo = (TextView) findViewById(R.id.txtTipo);
+
+        imgImob = (NetworkImageView) findViewById(R.id.imgImob);
+        tvEndereco = (TextView) findViewById(R.id.txtEndereco);
+        tvObs = (TextView) findViewById(R.id.txtObs);
+        tvArea1= (TextView) findViewById(R.id.txtarea1);
+        tvArea2 = (TextView) findViewById(R.id.txtarea2);
+        tvQuartos = (TextView) findViewById(R.id.txtquartos);
+        tvBWC = (TextView) findViewById(R.id.txtbwc);
+        tvGaragem = (TextView) findViewById(R.id.txtgaragem);
+        tvEdificio = (TextView) findViewById(R.id.txtEdificio);
+        tvNapto = (TextView) findViewById(R.id.txtNApart);
+
+
+        Intent it = getIntent();
+        idImov = it.getLongExtra(Principal.ID, -1);
+
+        imovelHTTP = new HttpJson("http://www.perimobile.com/ws.php?opt=2","&id=" + idImov){
+            @Override
+            Object lerJsonTarget(JSONObject json) throws JSONException {
+                JSONArray imoveisJson = json.getJSONArray("imovel");
+                List<Imovel> imoveis = new ArrayList<>();
+
+                for (int i = 0; i < imoveisJson.length(); i++) {
+                    JSONObject imovelJson = imoveisJson.getJSONObject(i);
+
+                    Imovel imovel = new Imovel(
+                            imovelJson.getLong("id"),
+                            imovelJson.getLong("id_imob"), imovelJson.getString("bairro"), imovelJson.getString("observacao"),
+                            imovelJson.getString("endereco"), imovelJson.getInt("numero"), imovelJson.getInt("tipo_negociacao"),
+                            imovelJson.getInt("destaque"), (float) imovelJson.getDouble("area1"),
+                            (float) imovelJson.getDouble("area2"), (float) imovelJson.getDouble("preco"),
+
+                            Imovel.Tipo.valueOf(imovelJson.getInt("tipo")),
+                            imovelJson.getString("foto_imovel"),
+                            imovelJson.getString("video_imovel"));
+                    imoveis.add(imovel);
+
+                }
+                return imoveis.size() == 1 ? (Imovel) imoveis.get(0) : null;
+            }
+        };
+        if (mTask == null) {
+            mTask = new ImovelTask();
+            mTask.execute();
+            if (HttpJson.temConexao(this)){
+                //startDownload();
+            } else {
+                mTextMessage.setText("Sem conexão");
+            }
+        } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
+            //showProgress(true);
+        }
+    }
+
+    class ImovelTask extends AsyncTask<Void, Void, Imovel> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            //showProgress(true);
+        }
+
+        @Override
+        protected Imovel doInBackground(Void... strings) {
+            //Aqui devemos usar para receber os dados do bd
+
+            return (Imovel) imovelHTTP.loadTargetJson(idImov);
+        }
+
+        @Override
+        protected void onPostExecute(Imovel imovel) {
+            super.onPostExecute(imovel);
+
+            //showProgress(false);
+            if (imovel != null) {
+                mImovel = imovel;
+
+                tvEndereco.setText(mImovel.getEndereco());
+                tvPreco.setText(String.valueOf(mImovel.getPreco()));
+                fotoImovel.setImageUrl(URLBase + imovel.getImgPrincipal(), mLoader);
+                imgImob.setImageUrl(URLBase + imovel.getImob().getLogo(), mLoader);
+            } else {
+                mTextMessage.setText("Falha ao carregar Imovel");
+            }
+        }
+    }
+}

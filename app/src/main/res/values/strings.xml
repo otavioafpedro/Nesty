@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Nesty</string>
+    <string name="action_settings">Settings</string>
+    <string name="erro_sincronizacao">FUDEU NA HORA DE SINCRONIZAR O ROLE CARAI!</string>
+    <string name="lugaresuteis">Lugares úteis</string>
+    <plurals name="numero_selecionados">%d</plurals>
+    <string name="title_activity_imovel_detalhe">ImovelDetalhe</string>
+    <string name="imov_imob">Imoveis da Imobiliaria</string>
+</resources>
