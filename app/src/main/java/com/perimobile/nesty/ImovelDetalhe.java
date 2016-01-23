@@ -71,16 +71,14 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
                     JSONObject imovelJson = imoveisJson.getJSONObject(i);
 
                     Imovel imovel = new Imovel(
-                            imovelJson.getLong("id"),
-                            imovelJson.getLong("id_imob"), imovelJson.getString("bairro"), imovelJson.getString("observacao"),
-                            imovelJson.getString("endereco"), imovelJson.getInt("numero"), imovelJson.getInt("tipo_negociacao"),
-                            imovelJson.getInt("destaque"), (float) imovelJson.getDouble("area1"),
-                            (float) imovelJson.getDouble("area2"), (float) imovelJson.getDouble("preco"),
+                            imovelJson.getLong(Imovel.ID),
+                            imovelJson.getLong(Imovel.IDIMOB), imovelJson.getString(Imovel.BAIRRO), imovelJson.getString(Imovel.OBS),
+                            imovelJson.getString(Imovel.ENDERECO), imovelJson.getInt(Imovel.NUMERO), imovelJson.getInt(Imovel.TIPONEGOCIACAO),
+                            imovelJson.getInt(Imovel.DESTAQUE), (float) imovelJson.getDouble(Imovel.AREA1),
+                            (float) imovelJson.getDouble(Imovel.AREA2), (float) imovelJson.getDouble(Imovel.PRECO),
 
-                            Imovel.Tipo.valueOf(imovelJson.getInt("tipo")),
-                            imovelJson.getString("foto_imovel"),
-                            imovelJson.getString("video_imovel"),
-                            imovelJson.getString("logo"));
+                            Imovel.Tipo.valueOf(imovelJson.getInt(Imovel.TIPO)),
+                            imovelJson.getString(Imovel.FOTOIMOVEL), imovelJson.getString(Imovel.VIDEOIMOVEL), imovelJson.getString(Imovel.LOGO));
                     imoveis.add(imovel);
 
                 }
