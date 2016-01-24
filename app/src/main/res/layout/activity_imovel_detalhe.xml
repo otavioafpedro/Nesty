@@ -168,9 +168,9 @@
             android:text="Video"
             android:onClick="playVideo"
             android:id="@+id/video"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lgruteis"
+            android:layout_marginTop="20dp" />
 
     </RelativeLayout>
 </ScrollView>

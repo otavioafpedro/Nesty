@@ -1,17 +1,13 @@
 package com.perimobile.nesty;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.media.MediaRecorder;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.VideoView;
+
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
@@ -63,6 +59,8 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
         tvNapto = (TextView) findViewById(R.id.txtNApart);
         Button lgruteis = (Button) findViewById(R.id.lgruteis);
         lgruteis.setOnClickListener(this);
+        Button video = (Button) findViewById(R.id.video);
+        video.setOnClickListener(this);
 
         Intent it = getIntent();
         idImov = it.getLongExtra(Principal.IDIMOV, -1);
@@ -117,6 +115,10 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
                 iti.putExtra(Principal.IDIMOV, mImovel.getId());
                 startActivity(iti);
                 break;
+            case R.id.video:
+                Intent video = new Intent(this, Video.class);
+                video.putExtra(Principal.IDIMOV, mImovel.getId());
+                startActivity(video);
         }
     }
 
@@ -154,8 +156,5 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
                 mTextMessage.setText("Falha ao carregar Imovel");
             }
         }
-    }
-    public void playVideo(View v) throws IOException {
-
     }
 }
