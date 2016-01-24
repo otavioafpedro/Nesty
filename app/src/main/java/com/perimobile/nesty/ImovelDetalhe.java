@@ -3,25 +3,28 @@ package com.perimobile.nesty;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.perimobile.nesty.Entidades.Imovel;
-
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayer.Provider;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImovelDetalhe extends AppCompatActivity implements View.OnClickListener {
+public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickListener, YouTubePlayer.OnInitializedListener {
 
     NetworkImageView fotoImovel, imgImob;
     TextView tvPreco, tvTipo, tvEndereco, tvObs, tvArea1, tvArea2, tvQuartos, tvBWC, tvGaragem, tvEdificio, tvNapto;
@@ -36,9 +39,13 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
 
     HttpJson imovelHTTP;
 
+    private static final int RECOVERY_REQUEST = 1;
+    private YouTubePlayerView youTubeView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mImovel = null;
         setContentView(R.layout.activity_imovel_detalhe);
         mLoader = PatternVolley.getInstance(this).getImageLoader();
 
@@ -59,8 +66,8 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
         tvNapto = (TextView) findViewById(R.id.txtNApart);
         Button lgruteis = (Button) findViewById(R.id.lgruteis);
         lgruteis.setOnClickListener(this);
-        Button video = (Button) findViewById(R.id.video);
-        video.setOnClickListener(this);
+
+        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
 
         Intent it = getIntent();
         idImov = it.getLongExtra(Principal.IDIMOV, -1);
@@ -100,6 +107,7 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
         } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
             //showProgress(true);
         }
+
     }
 
     @Override
@@ -115,12 +123,26 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
                 iti.putExtra(Principal.IDIMOV, mImovel.getId());
                 startActivity(iti);
                 break;
-            case R.id.video:
-                Intent video = new Intent(this, Video.class);
-                video.putExtra(Principal.IDIMOV, mImovel.getId());
-                startActivity(video);
         }
     }
+
+    @Override
+    public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
+        if (!wasRestored) {
+            player.cueVideo(mImovel.getVideo()); // Plays https://www.youtube.com/watch?v=pAgnJDJN4VA
+        }
+    }
+
+    @Override
+    public void onInitializationFailure(Provider provider, YouTubeInitializationResult errorReason) {
+        if (errorReason.isUserRecoverableError()) {
+            errorReason.getErrorDialog(this, RECOVERY_REQUEST).show();
+        } else {
+            String error = String.format(getString(R.string.player_error), errorReason.toString());
+            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
+        }
+    }
+
 
     class ImovelTask extends AsyncTask<Void, Void, Imovel> {
         @Override
@@ -139,7 +161,7 @@ public class ImovelDetalhe extends AppCompatActivity implements View.OnClickList
         @Override
         protected void onPostExecute(Imovel imovel) {
             super.onPostExecute(imovel);
-
+            youTubeView.initialize(Config.YOUTUBE_API_KEY, ImovelDetalhe.this);
             //showProgress(false);
             if (imovel != null) {
                 mImovel = imovel;

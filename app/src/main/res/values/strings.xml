@@ -7,4 +7,5 @@
     <string name="title_activity_imovel_detalhe">ImovelDetalhe</string>
     <string name="imov_imob">Imoveis da Imobiliaria</string>
     <string name="player_error">Erro ao iniciar o Video</string>
+    <string name="title_activity_video">VideoActivity</string>
 </resources>

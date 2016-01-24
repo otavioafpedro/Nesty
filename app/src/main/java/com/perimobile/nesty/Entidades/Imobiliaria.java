@@ -4,11 +4,24 @@ package com.perimobile.nesty.Entidades;
  * Created by Rodrigo on 04/11/2015.
  */
 public class Imobiliaria {
+    public static final String ID = "id";
+    public static final String NOME = "nome";
+    public static final String LOGO = "logo";
+    public static final String DESC = "descricao";
+    public static final String MSGIDS = "msgids";
+    public static final String TEL = "telefone";
+    public static final String ENDER = "endereco";
+    public static final String FOTOIMOB = "fotoimob";
     private long id;
 
     public long getId() {
         return id;
     }
+    private String nome;
+    private String logo;
+    private String descricao;
+    private String endereco;
+    private String fotoImob;
 
     public void setId(long id) {
         this.id = id;
@@ -28,12 +41,6 @@ public class Imobiliaria {
         this.endereco = endereco;
         this.fotoImob = fotoImob;
     }
-
-    private String nome;
-    private String logo;
-    private String descricao;
-    private String endereco;
-    private String fotoImob;
 
 
     public String getFotoImob() {

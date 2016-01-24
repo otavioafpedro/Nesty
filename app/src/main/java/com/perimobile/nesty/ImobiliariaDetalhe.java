@@ -57,14 +57,14 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
                 for (int i = 0; i < imobiliariasJson.length(); i++) {
                     JSONObject imobiliariaJson = imobiliariasJson.getJSONObject(i);
                     Imobiliaria imobiliaria = new Imobiliaria(
-                            imobiliariaJson.getLong("id"),
-                            imobiliariaJson.getString("nome"),
-                            imobiliariaJson.getString("logo"),
-                            imobiliariaJson.getString("descricao"),
-                            imobiliariaJson.getString("msgids"),
-                            imobiliariaJson.getInt("telefone"),
-                            imobiliariaJson.getString("endereco"),
-                            imobiliariaJson.getString("fotoimob"));
+                            imobiliariaJson.getLong(Imobiliaria.ID),
+                            imobiliariaJson.getString(Imobiliaria.NOME),
+                            imobiliariaJson.getString(Imobiliaria.LOGO),
+                            imobiliariaJson.getString(Imobiliaria.DESC),
+                            imobiliariaJson.getString(Imobiliaria.MSGIDS),
+                            imobiliariaJson.getInt(Imobiliaria.TEL),
+                            imobiliariaJson.getString(Imobiliaria.ENDER),
+                            imobiliariaJson.getString(Imobiliaria.FOTOIMOB));
                     imobiliarias.add(imobiliaria);
                 }
                 return imobiliarias.size() ==  1 ? imobiliarias.get(0) : null;
