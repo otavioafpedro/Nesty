@@ -42,7 +42,7 @@
             android:id="@+id/fotoImovel"
             android:padding="4dp"
             android:background="@color/azulnesty"
-            android:layout_below="@+id/imgImob"
+            android:layout_below="@+id/txtTipo"
             android:layout_centerHorizontal="true" />
 
         <com.android.volley.toolbox.NetworkImageView
