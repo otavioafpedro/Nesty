@@ -9,11 +9,29 @@ import java.util.Map;
  */
 
 public class Imovel implements Serializable{
+    public static final String ID = "id";
+    public static final String IDIMOB= "id_imob";
+    public static final String BAIRRO = "bairro";
+    public static final String OBS= "observacao";
+    public static final String ENDERECO = "endereco";
+    public static final String NUMERO = "numero";
+    public static final String TIPONEGOCIACAO = "tipo_negociacao";
+    public static final String DESTAQUE = "destaque";
+    public static final String AREA1= "area1";
+    public static final String AREA2 = "area2";
+    public static final String PRECO = "preco";
+    public static final String TIPO = "tipo";
+    public static final String FOTOIMOVEL = "foto_imovel";
+    public static final String VIDEOIMOVEL = "video_imovel";
+    public static final String LOGO = "logo";
+
     protected String bairro;
     protected String observacao;
     protected Tipo tipo;
     protected String endereco;
     protected int numero;
+    protected int quartos;
+    protected int bwc;
     protected int tipoNegociacao;         // venda/aluguel
     protected int destaque;
     protected float area1;
@@ -37,13 +55,6 @@ public class Imovel implements Serializable{
         this.imgPrincipal = imgPrincipal;
     }
 
-    public Imovel(long id, Tipo tipo, String endereco, float preco) {
-        this.id = id;
-        this.tipo = tipo;
-        this.endereco = endereco;
-        this.preco = preco;
-    }
-
     public Imovel(long id, long idImob, String bairro, String observacao, String endereco, int numero,
                   int tipoNegociacao, int destaque, float area1, float area2,
                   float preco, Tipo tipo,  String imgPrincipal, String video, String logoImob) {
@@ -62,6 +73,23 @@ public class Imovel implements Serializable{
         this.imgPrincipal = imgPrincipal;
         this.video = video;
         this.imob.setLogo(logoImob);
+    }
+
+
+    public int getQuartos() {
+        return quartos;
+    }
+
+    public void setQuartos(int quartos) {
+        this.quartos = quartos;
+    }
+
+    public int getBwc() {
+        return bwc;
+    }
+
+    public void setBwc(int bwc) {
+        this.bwc = bwc;
     }
 
     public enum Status {

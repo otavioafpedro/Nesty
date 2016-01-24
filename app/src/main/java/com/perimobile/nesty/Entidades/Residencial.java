@@ -4,28 +4,12 @@ package com.perimobile.nesty.Entidades;
  * Created by Rodrigo on 04/11/2015.
  */
 public class Residencial extends Imovel {
-    private int quartos;
-    private int bwc;
-    private int garagem;
 
-    public Residencial(long id, Tipo tipo, String endereco, float preco) {
-        super(id, tipo, endereco, preco);
-    }
+    protected int garagem;
 
-    public int getQuartos() {
-        return quartos;
-    }
-
-    public void setQuartos(int quartos) {
-        this.quartos = quartos;
-    }
-
-    public int getBwc() {
-        return bwc;
-    }
-
-    public void setBwc(int bwc) {
-        this.bwc = bwc;
+    public Residencial(long id, long idImob, String bairro, String observacao, String endereco, int numero, int tipoNegociacao, int destaque, float area1, float area2, float preco, Tipo tipo, String imgPrincipal, String video, String logoImob, int garagem) {
+        super(id, idImob, bairro, observacao, endereco, numero, tipoNegociacao, destaque, area1, area2, preco, tipo, imgPrincipal, video, logoImob);
+        this.garagem = garagem;
     }
 
     public int getGaragem() {
