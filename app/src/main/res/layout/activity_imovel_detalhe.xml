@@ -42,7 +42,7 @@
             android:id="@+id/fotoImovel"
             android:padding="4dp"
             android:background="@color/azulnesty"
-            android:layout_below="@+id/Preco"
+            android:layout_below="@+id/imgImob"
             android:layout_centerHorizontal="true" />
 
         <com.android.volley.toolbox.NetworkImageView
@@ -162,15 +162,13 @@
             android:layout_below="@+id/garagem"
             android:layout_marginTop="20dp"/>
 
-        <Button
+        <com.google.android.youtube.player.YouTubePlayerView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Video"
-            android:onClick="playVideo"
-            android:id="@+id/video"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:id="@+id/youtube_view"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/lgruteis"
+            android:layout_marginTop="20dp" />
 
     </RelativeLayout>
 </ScrollView>
