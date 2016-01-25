@@ -87,8 +87,8 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
                             imovelJson.getString(Imovel.ENDERECO), imovelJson.getInt(Imovel.NUMERO), imovelJson.getInt(Imovel.TIPONEGOCIACAO),
                             imovelJson.getInt(Imovel.DESTAQUE), (float) imovelJson.getDouble(Imovel.AREA1),
                             (float) imovelJson.getDouble(Imovel.AREA2), (float) imovelJson.getDouble(Imovel.PRECO),
-
                             Imovel.Tipo.valueOf(imovelJson.getInt(Imovel.TIPO)),
+                            imovelJson.getInt(Imovel.QUARTOS), imovelJson.getInt(Imovel.BWC),
                             imovelJson.getString(Imovel.FOTOIMOVEL), imovelJson.getString(Imovel.VIDEOIMOVEL), imovelJson.getString(Imovel.LOGO));
                     imoveis.add(imovel);
 
@@ -174,6 +174,8 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
                 tvObs.setText(mImovel.getObservacao());
                 tvArea1.setText(String.valueOf(mImovel.getArea1()));
                 tvArea2.setText(String.valueOf(mImovel.getArea2()));
+                tvQuartos.setText(String.valueOf(mImovel.getQuartos()));
+                tvBWC.setText(String.valueOf(mImovel.getBwc()));
             } else {
                 mTextMessage.setText("Falha ao carregar Imovel");
             }

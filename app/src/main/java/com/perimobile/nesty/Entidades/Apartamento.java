@@ -9,11 +9,11 @@ public class Apartamento extends Residencial {
 
     public Apartamento(long id, long idImob, String bairro, String observacao, String endereco,
                        int numero, int tipoNegociacao, int destaque, float area1, float area2,
-                       float preco, Tipo tipo, String imgPrincipal, String video, String logoImob,
+                       float preco, Tipo tipo, int quartos, int bwc, String imgPrincipal, String video, String logoImob,
                        int garagem, String edificio, int numApto) {
 
         super(id, idImob, bairro, observacao, endereco, numero, tipoNegociacao, destaque, area1, area2,
-                preco, tipo, imgPrincipal, video, logoImob, garagem);
+                preco, tipo, quartos, bwc, imgPrincipal, video, logoImob, garagem);
         this.edificio = edificio;
         this.numApto = numApto;
     }
