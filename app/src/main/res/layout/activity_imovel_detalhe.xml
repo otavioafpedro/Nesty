@@ -108,6 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtquartos"
+            android:text="@null"
             android:layout_toLeftOf="@+id/quartos"
             />
 
@@ -125,6 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtbwc"
+            android:text="@null"
             android:layout_toLeftOf="@+id/bwc"/>
 
         <TextView
@@ -141,16 +143,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtgaragem"
+            android:text="@null"
             android:layout_toLeftOf="@+id/garagem"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@null"
             android:id="@+id/txtEdificio"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@null"
             android:id="@+id/txtNApart"/>
 
         <Button
