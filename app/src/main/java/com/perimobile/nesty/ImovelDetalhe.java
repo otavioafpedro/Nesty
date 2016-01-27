@@ -102,7 +102,7 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
             if (HttpJson.temConexao(this)){
                 //startDownload();
             } else {
-                mTextMessage.setText("Sem conexão");
+                mTextMessage.setText(R.string.semconexao);
             }
         } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
             //showProgress(true);
@@ -177,7 +177,7 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
                 tvQuartos.setText(String.valueOf(mImovel.getQuartos()));
                 tvBWC.setText(String.valueOf(mImovel.getBwc()));
             } else {
-                mTextMessage.setText("Falha ao carregar Imovel");
+                mTextMessage.setText(R.string.loadfail1);
             }
         }
     }

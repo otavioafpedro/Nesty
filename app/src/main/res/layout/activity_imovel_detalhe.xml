@@ -24,7 +24,7 @@
             android:id="@+id/Preco"
             android:layout_margin="4dp"
             android:layout_alignParentLeft="true"
-            android:text="Valor: R$"
+            android:text="@string/moeda"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
@@ -101,7 +101,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
-            android:text="Quartos: "
+            android:text="@string/quartos"
             android:layout_below="@+id/txtarea2"/>
 
         <TextView
@@ -119,7 +119,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
-            android:text="Banheiros: "
+            android:text="@string/bwc"
             android:layout_below="@+id/quartos"/>
 
         <TextView
@@ -136,7 +136,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
-            android:text="Garagem: "
+            android:text="@string/garagem"
             android:layout_below="@+id/bwc"/>
 
         <TextView
