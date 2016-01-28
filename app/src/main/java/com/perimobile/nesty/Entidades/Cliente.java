@@ -12,6 +12,12 @@ public class Cliente {
     private String uf;
     private int idade;
     private int telefone;
+    private String urlFoto;
+
+    public Cliente(String nome , String urlFoto) {
+        this.nome = nome;
+        this.urlFoto = urlFoto;
+    }
 
     public int getTelefone() {
         return telefone;

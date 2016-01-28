@@ -84,7 +84,7 @@ public class ImovelListFragment extends Fragment {
             if (HttpJson.temConexao(getActivity())){
                 startDownload();
             } else {
-                mTextMessage.setText("Sem conexão");
+                mTextMessage.setText(R.string.semconexao);
             }
         } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
             //showProgress(true);
@@ -131,7 +131,7 @@ public class ImovelListFragment extends Fragment {
                 mImoveis.addAll(imoveis);
                 mAdapter.notifyDataSetChanged();
             } else {
-                mTextMessage.setText("Falha ao carregar imoveis");
+                mTextMessage.setText(R.string.loadfail);
             }
         }
     }

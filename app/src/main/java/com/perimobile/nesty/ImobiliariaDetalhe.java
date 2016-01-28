@@ -77,7 +77,7 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
             if (HttpJson.temConexao(this)){
                 //startDownload();
             } else {
-                mTextMessage.setText("Sem conexão");
+                mTextMessage.setText(R.string.semconexao);
             }
         } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
             //showProgress(true);
@@ -116,7 +116,7 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
                 nivFotoImob.setImageUrl(URLBase + mImobiliaria.getFotoImob(), mLoader);
 
             } else {
-                mTextMessage.setText("Falha ao carregar Imobiliaria");
+                mTextMessage.setText(R.string.loadfail2);
             }
         }
     }
