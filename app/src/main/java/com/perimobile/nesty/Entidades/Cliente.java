@@ -19,6 +19,14 @@ public class Cliente {
         this.urlFoto = urlFoto;
     }
 
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
     public int getTelefone() {
         return telefone;
     }
