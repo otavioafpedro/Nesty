@@ -14,18 +14,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:text="@null"
-            android:layout_toRightOf="@+id/Preco"
             android:layout_marginTop="4dp"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Preco"
-            android:layout_margin="4dp"
-            android:layout_alignParentLeft="true"
-            android:text="@string/moeda"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/txtTipo"
@@ -97,54 +87,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/quartos"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/quartos"
-            android:layout_below="@+id/txtarea2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/txtquartos"
-            android:text="@null"
-            android:layout_toLeftOf="@+id/quartos"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bwc"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/bwc"
-            android:layout_below="@+id/quartos"/>
+            android:layout_below="@id/txtarea2"
+            android:text="@null"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtbwc"
-            android:text="@null"
-            android:layout_toLeftOf="@+id/bwc"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/garagem"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/garagem"
-            android:layout_below="@+id/bwc"/>
+            android:layout_below="@id/txtquartos"
+            android:text="@null"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtgaragem"
-            android:text="@null"
-            android:layout_toLeftOf="@+id/garagem"/>
+            android:layout_below="@id/txtbwc"
+            android:text="@null"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -163,8 +122,8 @@
             android:layout_height="wrap_content"
             android:text="@string/lugaresuteis"
             android:id="@+id/lgruteis"
+            android:layout_below="@id/txtarea2"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/garagem"
             android:layout_marginTop="20dp"/>
 
         <com.google.android.youtube.player.YouTubePlayerView

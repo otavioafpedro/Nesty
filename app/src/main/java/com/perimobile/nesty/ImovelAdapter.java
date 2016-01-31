@@ -91,7 +91,7 @@ public class ImovelAdapter extends BaseAdapter {
         holder.imgPrincipal.setImageUrl(URLBase + imovel.getImgPrincipal(), mLoader);
         holder.txtEndereco.setText(imovel.getEndereco());
         holder.txtTipo.setText(imovel.getTipo());
-        holder.txtPreco.setText(String.valueOf(imovel.getPreco()));
+        holder.txtPreco.setText(String.format("%.02f", imovel.getPreco()));
 
 
 

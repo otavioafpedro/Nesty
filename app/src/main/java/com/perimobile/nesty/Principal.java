@@ -27,7 +27,7 @@ import com.google.android.gms.plus.model.people.Person;
 import com.perimobile.nesty.Entidades.Cliente;
 import com.squareup.picasso.Picasso;
 
-public class Principal extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class Principal extends AppCompatActivity {
     // List<Imovel> imoveis;
     // ImovelAdapter adapter;
     // ListView listView;
@@ -49,28 +49,28 @@ public class Principal extends AppCompatActivity implements GoogleApiClient.Conn
 
 
 
-        btnGPlus = (SignInButton) findViewById(R.id.sign_in_button);
+        //btnGPlus = (SignInButton) findViewById(R.id.sign_in_button);
 
-        btnGPlus.setOnClickListener(onLoginListener());
-
+        //btnGPlus.setOnClickListener(onLoginListener());
+/*
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(Plus.API)
                 .addScope(Plus.SCOPE_PLUS_LOGIN)
-                .build();
-    }
+                .build(); */
+    }  /*
 
 
     private View.OnClickListener onLoginListener() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v.getId() == R.id.sign_in_button && !mGoogleApiClient.isConnected() && !mGoogleApiClient.isConnecting()) {
+                 if (v.getId() == R.id.sign_in_button && !mGoogleApiClient.isConnected() && !mGoogleApiClient.isConnecting()) {
                     mSignInClicked = true;
                     login();
                 }
-                //signInGooglePlusAccount();
+                signInGooglePlusAccount();
             }
         };
     }
@@ -149,7 +149,7 @@ public class Principal extends AppCompatActivity implements GoogleApiClient.Conn
 
     }
 
-    public void login() {
+     public void login() {
         if (mConnectionResult.hasResolution()) {
             try {
                 mIntentInProgress = true;
@@ -171,13 +171,13 @@ public class Principal extends AppCompatActivity implements GoogleApiClient.Conn
 
                 //Fazer POST!!!
 
-                /*                
+                                
                            //transforma a URL em imagem, no esquema de deixar uma imagem padrão.
                             Picasso.with(this)
                                     .load(avatarUrl)
                                     .placeholder(R.mipmap.ic_launcher)
                                     .error(R.mipmap.ic_launcher)
-                                    .into(avatar); */
+                                    .into(avatar);
 
                 } else {
                 Log.e(TAG, "profile is null");
@@ -186,7 +186,7 @@ public class Principal extends AppCompatActivity implements GoogleApiClient.Conn
             ex.printStackTrace();
             }
     }
-
+*/
     /*@Override
     public View onCreateView(
             LayoutInflater inflater,
@@ -217,29 +217,6 @@ public class Principal extends AppCompatActivity implements GoogleApiClient.Conn
                 // App code
             }
         });
-    }*/
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     protected void onStart(){
         super.onStart();
@@ -269,4 +246,28 @@ public class Principal extends AppCompatActivity implements GoogleApiClient.Conn
         // Logs 'app deactivate' App Event.
         AppEventsLogger.deactivateApp(this);
     }
+    }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
