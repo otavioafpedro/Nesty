@@ -1,20 +1,25 @@
 <resources>
     <string name="app_name">Nesty</string>
-    <string name="action_settings">Settings</string>
-    <string name="erro_sincronizacao">FUDEU NA HORA DE SINCRONIZAR O ROLE CARAI!</string>
+    <string name="preco"></string>
+    <string name="area1">Área Construída: %.2f m²</string>
+    <string name="area2">Área Total: %.2f m²</string>
+    <string name="quartos">Quartos : %1$d</string>
+    <string name="bwc">Banheiros: %1$d</string>
+    <string name="garagem">Vagas de garagem: %d</string>
     <string name="lugaresuteis">Lugares úteis</string>
-    <string name="title_activity_imovel_detalhe">ImovelDetalhe</string>
     <string name="imov_imob">Imoveis da Imobiliaria</string>
-    <string name="player_error">Erro ao iniciar o Video</string>
+
+    <string name="title_activity_imovel_detalhe">ImovelDetalhe</string>
     <string name="title_activity_video">VideoActivity</string>
-    <string name="moeda">Preço R$:</string>
-    <string name="quartos">Quartos :</string>
-    <string name="bwc">Banheiros:</string>
-    <string name="garagem">Vagas de garagem:</string>
+
+    <string name="conexaosucesso">Conectado!</string>
     <string name="semconexao">Sem conexão</string>
+    <string name="player_error">Erro ao iniciar o Video</string>
+    <string name="erro_sincronizacao">FUDEU NA HORA DE SINCRONIZAR O ROLE CARAI!</string>
     <string name="loadfail">Falha ao carregar imóveis</string>
     <string name="loadfail1">Falha ao carregar imóvel</string>
     <string name="loadfail2">Falha ao carregar Imobiliária</string>
+    <string name="action_settings">Settings</string>
     <string name="facebook_app_id">138511346529823</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Senha (Opcional)</string>
@@ -26,5 +31,4 @@
     <string name="error_field_required">Esse campo é obrigatório</string>
     <string name="permission_rationale">"Permissões de contato são requeridas."</string>
     <string name="quiza">OU</string>
-    <string name="conexaosucesso">Conectado!</string>
 </resources>

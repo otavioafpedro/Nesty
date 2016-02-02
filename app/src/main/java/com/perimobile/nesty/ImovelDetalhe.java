@@ -1,6 +1,7 @@
 package com.perimobile.nesty;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -165,17 +166,30 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
             //showProgress(false);
             if (imovel != null) {
                 mImovel = imovel;
-
+                Resources res = getResources();
                 tvEndereco.setText(mImovel.getEndereco());
-                tvPreco.setText(String.valueOf(mImovel.getPreco()));
+
+                String preco = String.format(res.getString(R.string.preco), String.format("%.02f", mImovel.getPreco()));
+                tvPreco.setText(preco);
+
                 fotoImovel.setImageUrl(URLBase + imovel.getImgPrincipal(), mLoader);
                 imgImob.setImageUrl(URLBase + imovel.getImob().getLogo(), mLoader);
                 tvTipo.setText(mImovel.getTipo());
                 tvObs.setText(mImovel.getObservacao());
-                tvArea1.setText(String.valueOf(mImovel.getArea1()));
-                tvArea2.setText(String.valueOf(mImovel.getArea2()));
-                tvQuartos.setText(String.valueOf(mImovel.getQuartos()));
-                tvBWC.setText(String.valueOf(mImovel.getBwc()));
+
+
+                String area1 = String.format(res.getString(R.string.area1), mImovel.getArea1());
+                tvArea1.setText(area1);
+
+                String area2 = String.format(res.getString(R.string.area2), mImovel.getArea2());
+                tvArea2.setText(area2);
+
+                String quartos = String.format(res.getString(R.string.quartos), mImovel.getQuartos());
+                tvQuartos.setText(quartos);
+
+                String bwc = String.format(res.getString(R.string.bwc), mImovel.getBwc());
+                tvBWC.setText(bwc);
+
             } else {
                 mTextMessage.setText(R.string.loadfail1);
             }
