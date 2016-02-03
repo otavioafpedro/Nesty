@@ -2,6 +2,7 @@ package com.perimobile.nesty;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,6 @@ public class ImovelAdapter extends BaseAdapter {
     private ImageLoader mLoader;
     Context ctx;
     List<Imovel> imoveis;
-
     String URLBase = "http://www.perimobile.com/img";
     public ImovelAdapter(Context ctx, List<Imovel> imoveis) {
         mLoader = PatternVolley.getInstance(ctx).getImageLoader();
@@ -52,7 +52,7 @@ public class ImovelAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         final Imovel imovel = imoveis.get(position);
-
+        Resources res = ctx.getResources();
         ViewHolder holder = null;
         if (convertView == null) {
             convertView = LayoutInflater.from(ctx).inflate(R.layout.item_imovel, null);
@@ -68,6 +68,7 @@ public class ImovelAdapter extends BaseAdapter {
                 }
             });
             holder = new ViewHolder();
+
             holder.txtPreco = (TextView) convertView.findViewById(R.id.txtPreco);
             holder.txtTipo = (TextView) convertView.findViewById(R.id.txtTipo);
             holder.txtEndereco = (TextView) convertView.findViewById(R.id.txtEndereco);
@@ -91,7 +92,7 @@ public class ImovelAdapter extends BaseAdapter {
         holder.imgPrincipal.setImageUrl(URLBase + imovel.getImgPrincipal(), mLoader);
         holder.txtEndereco.setText(imovel.getEndereco());
         holder.txtTipo.setText(imovel.getTipo());
-        holder.txtPreco.setText(String.format("%.02f", imovel.getPreco()));
+        holder.txtPreco.setText(String.format(res.getString(R.string.preco),imovel.getPreco()));
 
 
 

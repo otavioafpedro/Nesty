@@ -54,6 +54,9 @@ public class Principal extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent it = new Intent(this, Mapa.class);
+            startActivity(it);
+
             return true;
         }
 

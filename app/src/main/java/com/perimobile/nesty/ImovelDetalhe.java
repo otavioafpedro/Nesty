@@ -34,7 +34,7 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
     private TextView mTextMessage;
 
     private long idImov;
-    Imovel mImovel;
+    private Imovel mImovel;
     private ImovelTask mTask;
     private ImageLoader mLoader;
 
@@ -171,7 +171,7 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
                 Resources res = getResources();
                 tvEndereco.setText(mImovel.getEndereco());
 
-                String preco = String.format(res.getString(R.string.preco), String.format("%.02f", mImovel.getPreco()));
+                String preco = String.format(res.getString(R.string.preco), mImovel.getPreco());
                 tvPreco.setText(preco);
 
                 fotoImovel.setImageUrl(URLBase + imovel.getImgPrincipal(), mLoader);

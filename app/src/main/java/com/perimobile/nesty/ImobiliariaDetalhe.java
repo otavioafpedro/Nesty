@@ -14,6 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,6 +111,7 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
 
                 tvNome.setText(mImobiliaria.getNome());
                 tvDescricao.setText(mImobiliaria.getDescricao());
+                //String s = new DecimalFormat("(##)####-####").format(mImobiliaria.getTelefone());
                 tvTelefone.setText(String.valueOf(mImobiliaria.getTelefone()));
                 tvEndereco.setText(String.valueOf(mImobiliaria.getEndereco()));
                 nivLogoImob.setImageUrl(URLBase + mImobiliaria.getLogo(), mLoader);
