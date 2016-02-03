@@ -40,8 +40,8 @@ public class Imovel implements Serializable{
     protected float area1;
     protected float area2;
     protected float preco;
-    protected float lat;
-    protected float lng;
+    protected double lat;
+    protected double lng;
     protected long id;
     protected Imobiliaria imob;
     protected String imgPrincipal;
@@ -60,7 +60,7 @@ public class Imovel implements Serializable{
         this.imgPrincipal = imgPrincipal;
     }
 
-    public Imovel(long id, long idimob, float preco, float lat, float lng) {
+    public Imovel(long id, long idimob, float preco, double lat, double lng) {
         this.id = id;
         this.imob = new Imobiliaria(idimob);
         this.preco = preco;
@@ -235,19 +235,19 @@ public class Imovel implements Serializable{
         this.video = video;
     }
 
-    public float getLng() {
+    public double getLng() {
         return lng;
     }
 
-    public void setLng(float lng) {
+    public void setLng(double lng) {
         this.lng = lng;
     }
 
-    public float getLat() {
+    public double getLat() {
         return lat;
     }
 
-    public void setLat(float lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 }

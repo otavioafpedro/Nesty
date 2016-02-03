@@ -19,23 +19,14 @@ public class Principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
-        final AppCompatActivity activity = Principal.this;
-        activity.setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(activity, Mapa.class);
-                startActivity(it);
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(Principal.this, Mapa.class));
             }
-        });*/
+        });
     }
 
     @Override
@@ -54,9 +45,6 @@ public class Principal extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent it = new Intent(this, Mapa.class);
-            startActivity(it);
-
             return true;
         }
 
