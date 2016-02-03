@@ -40,6 +40,8 @@ public class Imovel implements Serializable{
     protected float area1;
     protected float area2;
     protected float preco;
+    protected float lat;
+    protected float lng;
     protected long id;
     protected Imobiliaria imob;
     protected String imgPrincipal;
@@ -56,6 +58,14 @@ public class Imovel implements Serializable{
         this.preco = preco;
         this.imob.setLogo(imob);
         this.imgPrincipal = imgPrincipal;
+    }
+
+    public Imovel(long id, long idimob, float preco, float lat, float lng) {
+        this.id = id;
+        this.imob = new Imobiliaria(idimob);
+        this.preco = preco;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public Imovel(long id, long idImob, String bairro, String observacao, String endereco, int numero,

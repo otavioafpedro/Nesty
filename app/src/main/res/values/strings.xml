@@ -31,4 +31,5 @@
     <string name="error_field_required">Esse campo é obrigatório</string>
     <string name="permission_rationale">"Permissões de contato são requeridas."</string>
     <string name="quiza">OU</string>
+    <string name="title_activity_mapa">Mapa</string>
 </resources>
