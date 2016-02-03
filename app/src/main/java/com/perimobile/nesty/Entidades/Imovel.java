@@ -10,14 +10,14 @@ import java.util.Map;
 
 public class Imovel implements Serializable{
     public static final String ID = "id";
-    public static final String IDIMOB= "id_imob";
+    public static final String IDIMOB = "id_imob";
     public static final String BAIRRO = "bairro";
-    public static final String OBS= "observacao";
+    public static final String OBS = "observacao";
     public static final String ENDERECO = "endereco";
     public static final String NUMERO = "numero";
     public static final String TIPONEGOCIACAO = "tipo_negociacao";
     public static final String DESTAQUE = "destaque";
-    public static final String AREA1= "area1";
+    public static final String AREA1 = "area1";
     public static final String AREA2 = "area2";
     public static final String PRECO = "preco";
     public static final String TIPO = "tipo";
@@ -233,5 +233,21 @@ public class Imovel implements Serializable{
 
     public void setVideo(String video) {
         this.video = video;
+    }
+
+    public float getLng() {
+        return lng;
+    }
+
+    public void setLng(float lng) {
+        this.lng = lng;
+    }
+
+    public float getLat() {
+        return lat;
+    }
+
+    public void setLat(float lat) {
+        this.lat = lat;
     }
 }

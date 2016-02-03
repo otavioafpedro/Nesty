@@ -23,6 +23,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.perimobile.nesty.Entidades.Imovel;
 
@@ -51,6 +53,7 @@ public class Mapa extends AppCompatActivity implements LocationListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
+
         /*Toolbar toolbar2 = (Toolbar) findViewById(R.id.toolbar2);
         //setSupportActionBar(toolbar2);
 
@@ -73,7 +76,6 @@ public class Mapa extends AppCompatActivity implements LocationListener {
             List<Imovel> lerJsonTarget(JSONObject json) throws JSONException {
                 JSONArray imoveisJson = json.getJSONArray("imoveis");
                 List<Imovel> imoveis = new ArrayList<>();
-
                 for (int i = 0; i < imoveisJson.length(); i++) {
                     JSONObject imovelJson = imoveisJson.getJSONObject(i);
                     Imovel imovel = new Imovel(
@@ -82,6 +84,8 @@ public class Mapa extends AppCompatActivity implements LocationListener {
                             (float) imovelJson.getDouble("preco"),
                             (float) imovelJson.getDouble("lat"),
                             (float) imovelJson.getDouble("lng"));
+                    mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(imovel.getLat(),imovel.getLng()))
+                            .title(String.valueOf(imovel.getPreco())));
                     imoveis.add(imovel);
                 }
                 return imoveis;
@@ -108,7 +112,7 @@ public class Mapa extends AppCompatActivity implements LocationListener {
             mGoogleMap.setMyLocationEnabled(true);
 
             // Deixando o mapa do tipo satelite.
-            mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
             // Obtendo o Objeto LocationManager do LOCATION_SERVICE.
             LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -137,7 +141,6 @@ public class Mapa extends AppCompatActivity implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-
         // Obtendo a latitude da localização atual.
         double latitude = location.getLatitude();
 
