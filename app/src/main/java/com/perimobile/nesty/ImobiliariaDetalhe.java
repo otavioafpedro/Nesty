@@ -111,12 +111,13 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
 
                 tvNome.setText(mImobiliaria.getNome());
                 tvDescricao.setText(mImobiliaria.getDescricao());
-                //String s = new DecimalFormat("(##)####-####").format(mImobiliaria.getTelefone());
-                tvTelefone.setText(String.valueOf(mImobiliaria.getTelefone()));
+                String tmp = String.valueOf(mImobiliaria.getTelefone());
+                String telefone = "(" + tmp.substring(0,2) + ") " +
+                        tmp.substring(2,6)+"-"+ tmp.substring(6,10);
+                tvTelefone.setText(telefone);
                 tvEndereco.setText(String.valueOf(mImobiliaria.getEndereco()));
                 nivLogoImob.setImageUrl(URLBase + mImobiliaria.getLogo(), mLoader);
                 nivFotoImob.setImageUrl(URLBase + mImobiliaria.getFotoImob(), mLoader);
-
             } else {
                 mTextMessage.setText(R.string.loadfail2);
             }

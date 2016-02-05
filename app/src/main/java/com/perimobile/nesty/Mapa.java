@@ -143,10 +143,13 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
         @Override
         protected void onPostExecute(List<Imovel> is) {
             super.onPostExecute(is);
+            Resources res = getResources();
             for (int i = 0; i < imoveis.size(); i++) {
+
+                String preco = String.format(res.getString(R.string.preco), imoveis.get(i).getPreco());
                 mGoogleMap.addMarker(new MarkerOptions()
                         .position(new LatLng(imoveis.get(i).getLat(), imoveis.get(i).getLng()))
-                        .title(String.valueOf(imoveis.get(i).getPreco())));
+                        .title(String.valueOf(preco)));
             }
 
             // Possibilitando a minha localização no GoogleMap.

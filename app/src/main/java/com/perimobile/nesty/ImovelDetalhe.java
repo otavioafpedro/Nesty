@@ -94,7 +94,6 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
                             imovelJson.getInt(Imovel.QUARTOS), imovelJson.getInt(Imovel.BWC),
                             imovelJson.getString(Imovel.FOTOIMOVEL), imovelJson.getString(Imovel.VIDEOIMOVEL), imovelJson.getString(Imovel.LOGO));
                     imoveis.add(imovel);
-
                 }
                 return imoveis.size() == 1 ? (Imovel) imoveis.get(0) : null;
             }
@@ -110,7 +109,6 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
         } else if (mTask.getStatus() == AsyncTask.Status.RUNNING) {
             //showProgress(true);
         }
-
     }
 
     @Override
