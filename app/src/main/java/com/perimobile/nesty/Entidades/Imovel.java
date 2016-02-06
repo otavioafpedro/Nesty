@@ -10,14 +10,14 @@ import java.util.Map;
 
 public class Imovel implements Serializable{
     public static final String ID = "id";
-    public static final String IDIMOB= "id_imob";
+    public static final String IDIMOB = "id_imob";
     public static final String BAIRRO = "bairro";
-    public static final String OBS= "observacao";
+    public static final String OBS = "observacao";
     public static final String ENDERECO = "endereco";
     public static final String NUMERO = "numero";
     public static final String TIPONEGOCIACAO = "tipo_negociacao";
     public static final String DESTAQUE = "destaque";
-    public static final String AREA1= "area1";
+    public static final String AREA1 = "area1";
     public static final String AREA2 = "area2";
     public static final String PRECO = "preco";
     public static final String TIPO = "tipo";
@@ -26,6 +26,8 @@ public class Imovel implements Serializable{
     public static final String FOTOIMOVEL = "foto_imovel";
     public static final String VIDEOIMOVEL = "video_imovel";
     public static final String LOGO = "logo";
+    public static final String LAT = "lat";
+    public static final String LNG = "lng";
 
 
     protected String bairro;
@@ -40,8 +42,8 @@ public class Imovel implements Serializable{
     protected float area1;
     protected float area2;
     protected float preco;
-    protected float lat;
-    protected float lng;
+    protected double lat;
+    protected double lng;
     protected long id;
     protected Imobiliaria imob;
     protected String imgPrincipal;
@@ -50,7 +52,8 @@ public class Imovel implements Serializable{
     protected String logoImob;
 
 
-    public Imovel(long id, long idimob, Tipo tipo, String endereco, float preco, String imob, String imgPrincipal) {
+    public Imovel(long id, long idimob, Tipo tipo, String endereco, float preco,
+                  String imob, String imgPrincipal, double lat, double lng) {
         this.id = id;
         this.imob = new Imobiliaria(idimob);
         this.tipo = tipo;
@@ -58,9 +61,11 @@ public class Imovel implements Serializable{
         this.preco = preco;
         this.imob.setLogo(imob);
         this.imgPrincipal = imgPrincipal;
+        this.lat = lat;
+        this.lng = lng;
     }
 
-    public Imovel(long id, long idimob, float preco, float lat, float lng) {
+    public Imovel(long id, long idimob, float preco, double lat, double lng) {
         this.id = id;
         this.imob = new Imobiliaria(idimob);
         this.preco = preco;
@@ -233,5 +238,21 @@ public class Imovel implements Serializable{
 
     public void setVideo(String video) {
         this.video = video;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 }

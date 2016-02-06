@@ -29,9 +29,6 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
     HttpJson imobiliariaHTTP;
     String URLBase = "http://www.perimobile.com/img";
 
-    public static final String URL_IMOBILIARIA_JSON =
-            "http://www.perimobile.com/ws.php?opt=3";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,28 +46,9 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
 
         Intent it = getIntent();
         idImob = it.getLongExtra(Principal.IDIMOB, -1);
-        imobiliariaHTTP = new HttpJson(URL_IMOBILIARIA_JSON, "&id=" + idImob) {
-        @Override
-        Object lerJsonTarget(JSONObject json) throws JSONException {
-                JSONArray imobiliariasJson= json.getJSONArray("imobiliaria");
-                List<Imobiliaria> imobiliarias = new ArrayList<>();
 
-                for (int i = 0; i < imobiliariasJson.length(); i++) {
-                    JSONObject imobiliariaJson = imobiliariasJson.getJSONObject(i);
-                    Imobiliaria imobiliaria = new Imobiliaria(
-                            imobiliariaJson.getLong(Imobiliaria.ID),
-                            imobiliariaJson.getString(Imobiliaria.NOME),
-                            imobiliariaJson.getString(Imobiliaria.LOGO),
-                            imobiliariaJson.getString(Imobiliaria.DESC),
-                            imobiliariaJson.getString(Imobiliaria.MSGIDS),
-                            imobiliariaJson.getInt(Imobiliaria.TEL),
-                            imobiliariaJson.getString(Imobiliaria.ENDER),
-                            imobiliariaJson.getString(Imobiliaria.FOTOIMOB));
-                    imobiliarias.add(imobiliaria);
-                }
-                return imobiliarias.size() ==  1 ? imobiliarias.get(0) : null;
-            }
-        };
+        imobiliariaHTTP = new HttpJson(Principal.URLBASE+"?opt=imob", "&id=" + idImob);
+        imobiliariaHTTP.leitura = new LerImobiliaria();
 
         if (mTask == null) {
             mTask = new ImobiliariaTask();
@@ -111,12 +89,13 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
 
                 tvNome.setText(mImobiliaria.getNome());
                 tvDescricao.setText(mImobiliaria.getDescricao());
-                //String s = new DecimalFormat("(##)####-####").format(mImobiliaria.getTelefone());
-                tvTelefone.setText(String.valueOf(mImobiliaria.getTelefone()));
+                String tmp = String.valueOf(mImobiliaria.getTelefone());
+                String telefone = "(" + tmp.substring(0,2) + ") " +
+                        tmp.substring(2,6)+"-"+ tmp.substring(6,10);
+                tvTelefone.setText(telefone);
                 tvEndereco.setText(String.valueOf(mImobiliaria.getEndereco()));
                 nivLogoImob.setImageUrl(URLBase + mImobiliaria.getLogo(), mLoader);
                 nivFotoImob.setImageUrl(URLBase + mImobiliaria.getFotoImob(), mLoader);
-
             } else {
                 mTextMessage.setText(R.string.loadfail2);
             }

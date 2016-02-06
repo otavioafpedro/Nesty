@@ -13,9 +13,6 @@ import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.perimobile.nesty.Entidades.Imovel;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,33 +28,13 @@ public class ImovelListFragment extends Fragment {
     ProgressBar mProgressBar;
     ImovelAdapter mAdapter;
     HttpJson imovelHTTP;
-    public static final String URL_IMOVEL_JSON =
-            "http://www.perimobile.com/ws.php?opt=1";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        imovelHTTP = new HttpJson(URL_IMOVEL_JSON,"") {
-            @Override
-            List<Imovel> lerJsonTarget(JSONObject json) throws JSONException {
-                JSONArray imoveisJson = json.getJSONArray("imoveis");
-                List<Imovel> imoveis = new ArrayList<>();
+        imovelHTTP = new HttpJson(Principal.URLBASE+"?opt=prev","");
+        imovelHTTP.leitura = new LerImovelResumido();
 
-                for (int i = 0; i < imoveisJson.length(); i++) {
-                    JSONObject imovelJson = imoveisJson.getJSONObject(i);
-                    Imovel imovel = new Imovel(
-                            imovelJson.getLong("id"),
-                            imovelJson.getLong("id_imob"),
-                            Imovel.Tipo.valueOf(imovelJson.getInt("tipo")),
-                            imovelJson.getString("endereco"),
-                            (float) imovelJson.getDouble("preco"),
-                            imovelJson.getString("logo"),
-                            imovelJson.getString("foto_imovel"));
-                    imoveis.add(imovel);
-                }
-                return imoveis;
-            }
-        };
     }
 
     @Override
