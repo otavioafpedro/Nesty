@@ -60,11 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LerJSON.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImobiliariaDetalhe.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImobiliariaDetalhe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6207865">
+              <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LerJSON.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/LerJSON.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9044944">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1734,13 +1744,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/HttpNovo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/Entidades/Imovel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/HttpJson.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImobiliariaDetalhe.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImovelDetalhe.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImovelListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/Mapa.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/PatternVolley.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/Principal.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/LerJSON.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImobiliariaDetalhe.java" />
       </list>
     </option>
   </component>
@@ -2631,14 +2641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImobiliariaDetalhe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7586207">
-          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/Entidades/Imovel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8797814">
@@ -2723,11 +2725,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/LerJSON.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9044944">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/perimobile/nesty/ImobiliariaDetalhe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6207865">
+          <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>

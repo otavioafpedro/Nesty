@@ -47,7 +47,7 @@ public class ImobiliariaDetalhe extends AppCompatActivity {
         Intent it = getIntent();
         idImob = it.getLongExtra(Principal.IDIMOB, -1);
 
-        imobiliariaHTTP = new HttpJson(Principal.URLBASE+"?opt=3", "&id=" + idImob);
+        imobiliariaHTTP = new HttpJson(Principal.URLBASE+"?opt=imob", "&id=" + idImob);
         imobiliariaHTTP.leitura = new LerImobiliaria();
 
         if (mTask == null) {
