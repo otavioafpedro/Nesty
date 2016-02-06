@@ -20,12 +20,6 @@ import com.perimobile.nesty.Entidades.Imovel;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickListener, YouTubePlayer.OnInitializedListener {
 
@@ -75,29 +69,9 @@ public class ImovelDetalhe extends YouTubeBaseActivity implements View.OnClickLi
         Intent it = getIntent();
         idImov = it.getLongExtra(Principal.IDIMOV, -1);
 
-        imovelHTTP = new HttpJson("http://www.perimobile.com/ws.php?opt=2","&id=" + idImov){
-            @Override
-            Object lerJsonTarget(JSONObject json) throws JSONException {
-                JSONArray imoveisJson = json.getJSONArray("imovel");
-                List<Imovel> imoveis = new ArrayList<>();
+        imovelHTTP = new HttpJson(Principal.URLBASE+"?opt=full", "&id=" + idImov);
+        imovelHTTP.leitura = new LerImovelCompleto();
 
-                for (int i = 0; i < imoveisJson.length(); i++) {
-                    JSONObject imovelJson = imoveisJson.getJSONObject(i);
-
-                    Imovel imovel = new Imovel(
-                            imovelJson.getLong(Imovel.ID),
-                            imovelJson.getLong(Imovel.IDIMOB), imovelJson.getString(Imovel.BAIRRO), imovelJson.getString(Imovel.OBS),
-                            imovelJson.getString(Imovel.ENDERECO), imovelJson.getInt(Imovel.NUMERO), imovelJson.getInt(Imovel.TIPONEGOCIACAO),
-                            imovelJson.getInt(Imovel.DESTAQUE), (float) imovelJson.getDouble(Imovel.AREA1),
-                            (float) imovelJson.getDouble(Imovel.AREA2), (float) imovelJson.getDouble(Imovel.PRECO),
-                            Imovel.Tipo.valueOf(imovelJson.getInt(Imovel.TIPO)),
-                            imovelJson.getInt(Imovel.QUARTOS), imovelJson.getInt(Imovel.BWC),
-                            imovelJson.getString(Imovel.FOTOIMOVEL), imovelJson.getString(Imovel.VIDEOIMOVEL), imovelJson.getString(Imovel.LOGO));
-                    imoveis.add(imovel);
-                }
-                return imoveis.size() == 1 ? (Imovel) imoveis.get(0) : null;
-            }
-        };
         if (mTask == null) {
             mTask = new ImovelTask();
             mTask.execute();

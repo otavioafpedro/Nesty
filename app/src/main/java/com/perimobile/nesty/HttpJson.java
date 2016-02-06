@@ -8,7 +8,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,7 +17,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-abstract class HttpJson {
+public class HttpJson {
     static protected String URL_TARGET_JSON;
     static protected String parametros;
 
@@ -47,8 +46,10 @@ abstract class HttpJson {
         return (info != null && info.isConnected());
     }
 
-    abstract Object lerJsonTarget(JSONObject json) throws JSONException;
-
+    LerJSON leitura;
+    public Object ler(JSONObject json) throws JSONException {
+        return leitura.lerJsonTarget(json);
+    }
 
     public Object loadTargetJson(long id) {
         try{
@@ -57,7 +58,7 @@ abstract class HttpJson {
             if(resposta == HttpURLConnection.HTTP_OK) {
                 InputStream is = conexao.getInputStream();
                 JSONObject json = new JSONObject(bytesParaString(is));
-                return lerJsonTarget(json);
+                return ler(json);
             }
         }catch (Exception e) {
             e.printStackTrace();

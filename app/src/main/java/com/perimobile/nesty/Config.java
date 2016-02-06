@@ -4,7 +4,6 @@ package com.perimobile.nesty;
  * Created by Otto on 24/01/2016.
  */
 public class Config {
-
     private Config() {
     }
 

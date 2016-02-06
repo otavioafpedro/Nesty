@@ -26,6 +26,8 @@ public class Imovel implements Serializable{
     public static final String FOTOIMOVEL = "foto_imovel";
     public static final String VIDEOIMOVEL = "video_imovel";
     public static final String LOGO = "logo";
+    public static final String LAT = "lat";
+    public static final String LNG = "lng";
 
 
     protected String bairro;
@@ -50,7 +52,8 @@ public class Imovel implements Serializable{
     protected String logoImob;
 
 
-    public Imovel(long id, long idimob, Tipo tipo, String endereco, float preco, String imob, String imgPrincipal) {
+    public Imovel(long id, long idimob, Tipo tipo, String endereco, float preco,
+                  String imob, String imgPrincipal, double lat, double lng) {
         this.id = id;
         this.imob = new Imobiliaria(idimob);
         this.tipo = tipo;
@@ -58,6 +61,8 @@ public class Imovel implements Serializable{
         this.preco = preco;
         this.imob.setLogo(imob);
         this.imgPrincipal = imgPrincipal;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public Imovel(long id, long idimob, float preco, double lat, double lng) {
