@@ -2,11 +2,270 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Rodrigo\AndroidStudioProjects\Nesty\app\build\intermediates\exploded-aar\com.google.maps.android\android-maps-utils\0.3.1\jars\classes.jar"
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-b1baaf76724998b282e349fa43edcb82e4c4fb40.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-b3622bb2ecd9d4d8321fabbe6dfe0e42fa14ffd5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-4a572f9aef322bea3cfe4b3bd2311fac25a032b6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.0-1e5ad7247d0b1d2ce7ca190fd39c0d92e3578540.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-6b38f2b05e8a52e38fe86b927c53d654106b181b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-a0ded375dd5a52491daa783f34e5d265d115aace.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\libs\volley.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2e883834b68d13bfba607be2d8490c9b37991962">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\volley-9c1e69e7f98b163331365675c5c116da8230a6c8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-04793a3d691c4be34b30a2424c59b41dd62bb94c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-66875d394e3c1929784fba4204566e851f7beb3c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-5570b0cbbc3acd49ccc2d987de3603c05dc5542a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-71dd791c99de09dc73da1cddb74aeae731308d74.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-c11a6a401697b53c784c8954d64c9d5ac7cecdd3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-72d27b4f934130994737452f6fbfa17fcd1917f3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-9bebc467b5bfabb2dc5ef76ee0645e4b5ffbc09b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-4b1b3bc292087819bf6cde1a7d3f1c4cfa96b54c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-fd704409b3ad0857abc09991903dc7c86f879d5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-3dfc2fdea3fee79d905ff26bd011c67120a5bdbf.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-ba608aa93170193161b6e97ae8b31943574cc56d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\libs\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi-7262b32e20720336a8a94b027ac6820d1b5afcf9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-7b66ebe6e920a050c320b6b2b606368fe6348810.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-bf2fe5c996642d50096658373d84b8fcc3dcb40d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-426dded4a94d8006607b79075c3cdcf9bd23d026.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.6.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1c1afa0ab2a8197a5da1b36c4167a9e479cb74d9">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-12a9dab448c4efeefbde069bc8d76c121469d7c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-70b9ed3ae357e143d8a0ecf849a3784feb729455.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-432cb8fced935ea99244b745a861fd0b73735b4e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-aece80126574967fe8dd84406ab9c3a23ce34117.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-b464a72ef52c2a9604e5cb1f27a640f6cb54bde5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-5b616f013db376354e0c0cbb2cfebed40b667141.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-89b77e4cabe918990af848c0bab3a7e3c5ca5369.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-076d2607a92479f1bad95f271d90f22c84d9e016.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-bf96f7a77f9a36e5894eec2643e703dc0581fd5a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-a0b56ebd9b15be2d905120be43ea129ffa46b356.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="62209cacb78ffe64f71ed8527fd08d8fbb9fd433">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-d516ae80a3336610b6bdcd0aa60421145f251435.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.maps.android\android-maps-utils\0.3.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="0840d832d8a8c4fde01e623f2817332801e6bb49">
-        <dex dex="C:\Users\Rodrigo\AndroidStudioProjects\Nesty\app\build\intermediates\pre-dexed\debug\classes-a33a857ab837e4c5c050daa51c85c438f717baee.jar" />
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-6d80863209e57598ae275baecca06819b7ee7ec9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-dce63fbb7fa80b76b2cd0aa19ad2bdec692f631b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-b96bbc4931f161fb6fdd0b1dad9afe4e92d358cc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-d3b1af70649e9bc6fbd3d358f3047b026a808533.jar" />
+    </item>
+    <item
+        jar="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="C:\Users\Otto\Desktop\GitHub\Nesty\app\build\intermediates\pre-dexed\debug\classes-13efb95a15aa13ad5d6a70e3cd3fdb68729bb87d.jar" />
     </item>
 
 </items>

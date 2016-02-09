@@ -32,4 +32,8 @@
     <string name="permission_rationale">"Permissões de contato são requeridas."</string>
     <string name="quiza">OU</string>
     <string name="title_activity_mapa">Mapa</string>
+
+    <string name="custom_info_contents">Content personalidade</string>
+    <string name="custom_info_window">Janela personalizada</string>
+    <string name="default_info_window">Janela padrão</string>
 </resources>
