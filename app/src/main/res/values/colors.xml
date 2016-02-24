@@ -7,4 +7,7 @@
     <color name="vescuronesty">#A23234</color>
     <color name="vclaronesty">#D93438</color>
     <color name="white">#D0FFFFFF</color>
+    <color name="textopri">#212121</color>
+    <color name="textosec">#727272</color>
+    <color name="divisoes">#B6B6B6</color>
 </resources>

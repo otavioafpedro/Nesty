@@ -36,4 +36,5 @@
     <string name="custom_info_contents">Content personalidade</string>
     <string name="custom_info_window">Janela personalizada</string>
     <string name="default_info_window">Janela padrão</string>
+    <string name="distuteis">Distâncias Úteis</string>
 </resources>

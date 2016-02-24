@@ -1,14 +1,12 @@
 package com.perimobile.nesty;
 
-import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +16,6 @@ import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -38,6 +35,7 @@ import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.perimobile.nesty.Entidades.Imovel;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Mapa extends AppCompatActivity implements LocationListener, OnMapReadyCallback, OnInfoWindowClickListener {
@@ -47,11 +45,12 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
     private List<Imovel> imoveis;
     GoogleMap mGoogleMap;
     HttpJson imovelHTTPmapa;
-    RadioGroup mOptions;
-    private Marker mLastSelectedMarker;
+    private HashMap<String, Integer> mMarkers;
     private Long id;
     private Context ctx;
-    private ImageLoader mLoader;
+    //private ImageLoader mLoader;
+    private String FullURL = null;
+    private String URLImg = "http://www.perimobile.com/img";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +64,10 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
             }
         });
 
+        mMarkers = new HashMap<String, Integer>();
+
         this.ctx = this;
-        mLoader = PatternVolley.getInstance(ctx).getImageLoader();
+        //mLoader = PatternVolley.getInstance(ctx).getImageLoader();
 
         imovelHTTPmapa = new HttpJson(Principal.URLBASE + "?opt=prev", "");
         imovelHTTPmapa.leitura = new LerImovelResumido();
@@ -84,17 +85,6 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
             // Pegando referencia do SupportMapFragment para a acitvity_map.xml
             SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
             fm.getMapAsync(this);
-
-            /*mOptions = (RadioGroup) findViewById(R.id.custom_info_window_options);
-            mOptions.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if (mLastSelectedMarker != null && mLastSelectedMarker.isInfoWindowShown()) {
-                        // Refresh the info window when the info window's content has changed.
-                        mLastSelectedMarker.showInfoWindow();
-                    }
-                }
-            });*/
         }
     }
 
@@ -120,18 +110,21 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
 
                 String preco = String.format(res.getString(R.string.preco), imoveis.get(i).getPreco());
                 id = imoveis.get(i).getId();
-                mGoogleMap.addMarker(new MarkerOptions()
+                Integer obj = (int) (long) id;
+                MarkerOptions mo = new MarkerOptions()
                         .position(new LatLng(imoveis.get(i).getLat(), imoveis.get(i).getLng()))
                         .title(String.valueOf(preco))
                         .snippet(imoveis.get(i).getEndereco())
-                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+                Marker mkr = mGoogleMap.addMarker(mo);
+                mMarkers.put(mkr.getId(), obj);
             }
 
             // Possibilitando a minha localização no GoogleMap.
             /*if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
-            }*/
-            //mGoogleMap.setMyLocationEnabled(true);
+            }
+            mGoogleMap.setMyLocationEnabled(true);*/
 
             // Set listeners for marker events.  See the bottom of this class for their behavior.
 
@@ -184,7 +177,7 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
         if (mTask == null) {
             mTask = new ImovelTask();
             mTask.execute();
-            if (HttpJson.temConexao(this)){
+            if (HttpJson.temConexao(this)) {
                 //startDownload();
             } else {
                 //mTextMessage.setText(R.string.semconexao);
@@ -227,45 +220,42 @@ public class Mapa extends AppCompatActivity implements LocationListener, OnMapRe
         }
 
         private void render(Marker marker, View view) {
-            String URLImg = "http://www.perimobile.com/img";
+            String casap = "/casap.jpg";
             int azulnesty = getResources().getColor(R.color.azulnesty);
             int vermelhonesty = getResources().getColor(R.color.vescuronesty);
+
             /*for (int i = 0; i < imoveis.size(); i++) {
-
-                if (imoveis.get(i).getId() == id) {
-                    NetworkImageView badge = (NetworkImageView) findViewById(R.id.badge);
-                    badge.setImageUrl(URLImg + imoveis.get(i).getImgPrincipal(), mLoader);
-                    ImageView badge = (ImageView) findViewById(R.id.badge);
-
-                    Picasso.with(ctx)
-                            .load(URLImg + imoveis.get(i).getImgPrincipal())
-                            .into(badge);
+                int mkr = mMarkers.get(marker.getId());
+                if (imoveis.get(i).getId() == mkr) {
+                    FullURL = (URLImg + imoveis.get(i).getImgPrincipal());
                 } else {
-                    int badge = R.mipmap.ic_launcher;
-                    ((NetworkImageView) view.findViewById(R.id.badge)).setImageResource(badge);
-                }*/
-
-                String title = marker.getTitle();
-                TextView titleUi = ((TextView) view.findViewById(R.id.title));
-                if (title != null) {
-                    // Spannable string allows us to edit the formatting of the text.
-                    SpannableString titleText = new SpannableString(title);
-                    titleText.setSpan(new ForegroundColorSpan(azulnesty), 0, titleText.length(), 0);
-                    titleUi.setText(titleText);
-                } else {
-                    titleUi.setText("");
+                    FullURL = (URLImg + casap);
                 }
+            }
 
-                String snippet = marker.getSnippet();
-                TextView snippetUi = ((TextView) view.findViewById(R.id.snippet));
-                if (snippet != null && snippet.length() > 12) {
-                    SpannableString snippetText = new SpannableString(snippet);
-                    snippetText.setSpan(new ForegroundColorSpan(vermelhonesty), 0, snippet.length(), 0);
-                    snippetUi.setText(snippetText);
-                } else {
-                    snippetUi.setText("");}
+            ImageView badge = (ImageView) findViewById(R.id.badge);
+            Picasso.with(ctx).load(Uri.parse(FullURL)).resize(250,250).into(badge);*/
+
+            String title = marker.getTitle();
+            TextView titleUi = ((TextView) view.findViewById(R.id.title));
+            if (title != null) {
+                SpannableString titleText = new SpannableString(title);
+                titleText.setSpan(new ForegroundColorSpan(azulnesty), 0, titleText.length(), 0);
+                titleUi.setText(titleText);
+            } else {
+                titleUi.setText("");
+            }
+
+            String snippet = marker.getSnippet();
+            TextView snippetUi = ((TextView) view.findViewById(R.id.snippet));
+            if (snippet != null && snippet.length() > 12) {
+                SpannableString snippetText = new SpannableString(snippet);
+                snippetText.setSpan(new ForegroundColorSpan(vermelhonesty), 0, snippet.length(), 0);
+                snippetUi.setText(snippetText);
+            } else {
+                snippetUi.setText("");
+            }
         }
-
     }
 }
 
